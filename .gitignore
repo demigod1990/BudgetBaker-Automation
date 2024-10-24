@@ -1,12 +1,6 @@
-
-# Maven #
-#########
-**/target/*
-target
-
-# Other IDE's#
-##############
-\.classpath
-\.project
-\.settings
-/test-output
+/target/
+.metadata
+.project
+.classpath
+/.settings/
+/test-output/
