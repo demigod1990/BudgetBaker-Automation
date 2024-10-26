@@ -1,0 +1,45 @@
+# .github/workflows/selenium-docker.yml
+
+name: Run Selenium Tests in Docker
+
+on: 
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  schedule:
+    - cron: '30 5 * * *'  # Run daily at 11:00 AM IST
+
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Use Ubuntu runner
+
+    services:
+      selenium:
+        image: selenium/standalone-chrome:latest  # Start Selenium Chrome container
+        ports:
+          - 4444:4444
+
+    steps:
+      # Step 1: Checkout the repository code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up JDK 11
+      - name: Set up JDK 11
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'  # Specify JDK version 11
+          distribution: 'temurin'  # Temurin is the recommended OpenJDK distribution
+
+
+      # Step 4: Build the project with Maven
+      - name: Build with Maven
+        run: mvn clean install
+
+      # Step 5: Run the Selenium TestNG test suite
+      - name: Run Selenium Tests
+        run: mvn test
