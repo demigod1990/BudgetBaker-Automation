@@ -52,7 +52,7 @@ public class TestListener implements ITestListener, ISuiteListener {
 		String testDesc=result.getMethod().getDescription();
 		extentTest = extentReport.createTest(testDesc);
 		ReportManager.setExtentTest(extentTest);
-		ReportManager.getExtentTest().log(Status.INFO, testDesc+" started." );
+		ReportManager.getExtentTest().log(Status.INFO, "Test scenario: "+testDesc+" started." );
 		Log.info("\""+testDesc+"\" test execution started.");
 
 	}
@@ -60,7 +60,7 @@ public class TestListener implements ITestListener, ISuiteListener {
 	@Override
 	public void onTestSuccess(ITestResult result) {
 		String testDesc=result.getMethod().getDescription();
-		ReportManager.getExtentTest().log(Status.PASS, testDesc+" test passed." );
+		ReportManager.getExtentTest().log(Status.PASS, "Test scenario: "+testDesc+" test passed." );
 		ReportManager.removeExtentTest();
 		Log.info("\""+testDesc+"\" passed.");		
 		
@@ -84,7 +84,7 @@ public class TestListener implements ITestListener, ISuiteListener {
 			e.printStackTrace();
 		}
 		
-		ReportManager.getExtentTest().log(Status.FAIL, testDesc +" failed.");
+		ReportManager.getExtentTest().log(Status.FAIL, "Test scenario: "+testDesc +" failed.");
 		ReportManager.getExtentTest().fail(Arrays.toString(result.getThrowable().getStackTrace()));//beautify stacktrace		
 		ReportManager.removeExtentTest();
 		Log.error("\""+result.getName()+"\" failed.", result.getThrowable());
@@ -93,7 +93,7 @@ public class TestListener implements ITestListener, ISuiteListener {
 	@Override
 	public void onTestSkipped(ITestResult result) {
 		String testName=result.getName();
-		ReportManager.getExtentTest().log(Status.SKIP, testName +" skipped.");		
+		ReportManager.getExtentTest().log(Status.SKIP, "Test scenario: "+testName +" skipped.");		
 		ReportManager.getExtentTest().skip(Arrays.toString(result.getThrowable().getStackTrace()));		
 		ReportManager.removeExtentTest();
 		Log.error("\""+result.getName()+"\" skipped.", result.getThrowable());		

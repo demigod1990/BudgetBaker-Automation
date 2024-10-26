@@ -1,0 +1,15 @@
+{
+  "TestCase01_LoginTest": [
+    {
+      "email": "subha.crmqa@gmail.com",
+      "password": "Passwd1#",
+      "cashbalance": "5000"
+    }
+  ],
+  "TestCase02_LogoutTest": [
+    {
+      "email": "subha.crmqa@gmail.com",
+      "password": "Passwd1#"
+    }
+  ]
+}

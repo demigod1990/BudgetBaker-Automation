@@ -1,6 +1,7 @@
 package decorators;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 
 import java.io.File;
 import java.util.List;
@@ -15,5 +16,6 @@ public interface Driver {
     public void waitForAjax();
     public void waitUntilPageLoadsCompletely();
     public File takescreenshot();
+   public void executeJsClick(By locator);
     
 }

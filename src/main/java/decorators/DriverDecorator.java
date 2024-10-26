@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 
 public class DriverDecorator implements Driver {
 	
@@ -47,6 +48,10 @@ public class DriverDecorator implements Driver {
 
 	public File takescreenshot() {
 		return driver.takescreenshot();		
+	}
+
+	public void executeJsClick(By locator) {
+		driver.executeJsClick(locator);
 	}
 
 

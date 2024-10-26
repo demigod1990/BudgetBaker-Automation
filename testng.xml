@@ -8,9 +8,10 @@
   
   <parameter name = "browser" value = "chrome"></parameter>
   
-  <test name="Login Test">
+  <test name="Login and Logout Test">
     <classes>
       <class name="testCases.LoginTest"/>
+      <class name="testCases.LogoutTest"/>
     </classes>
   </test> <!-- Test -->
   

@@ -1,5 +1,7 @@
 package browserfactory;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
@@ -12,7 +14,7 @@ public class EdgeDriverManager implements BrowserManager{
 	public WebDriver initDriver() {
 		WebDriverManager.edgedriver().setup();
 		driver = new EdgeDriver();
-		
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		return driver;
 	}
 
