@@ -46,7 +46,7 @@ jobs:
       
       # Step 5: Archive the Surefire reports
       - name: Archive Surefire reports
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: surefire-reports
           path: target/surefire-reports
