@@ -14,7 +14,10 @@ public class ChromeDriverManager  implements BrowserManager{
 	public WebDriver initDriver() {
 		ChromeOptions chromeOptions = new ChromeOptions();
 		chromeOptions.addArguments("start-maximized");
-		chromeOptions.addArguments("-headed");
+		chromeOptions.addArguments("--headless");
+		chromeOptions.addArguments("--no-sandbox"); // Important in CI environments
+		chromeOptions.addArguments("--disable-dev-shm-usage"); // To avoid memory issues
+		chromeOptions.addArguments("--disable-gpu"); // Disables GPU hardware acceleration
 
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver(chromeOptions);
