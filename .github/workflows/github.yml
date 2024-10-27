@@ -55,4 +55,11 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: extent-reports
-          path: ExtentReports/**
+          path: ExtentReports/extentReports.html
+          
+      # Step 6: Archive Screenshots
+      - name: Archive Screenshots
+        uses: actions/upload-artifact@v3
+        with:
+          name: Screenshots
+          path: Screenshots/**
