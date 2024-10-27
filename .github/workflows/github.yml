@@ -42,20 +42,21 @@ jobs:
             mvn clean 
             mvn install -DskipTests
             echo "Build completed"
-        continue-on-error: true
+        
 
       # Step 5: Run the Selenium TestNG test suite
       - name: Run Selenium Tests
         run: |
             mvn test || { echo 'Tests failed'; exit 1; }
-        continue-on-error: false
+        if: always()
       
-      # Step 5: Archive the Surefire reports
+      # Step 5: Archive the Extent reports
       - name: Archive Extent Reports
         uses: actions/upload-artifact@v3
         with:
           name: extent-reports
           path: ExtentReports/extentReports.html
+        if: always()
           
       # Step 6: Archive Screenshots
       - name: Archive Screenshots
@@ -63,3 +64,4 @@ jobs:
         with:
           name: Screenshots
           path: Screenshots/**
+        if: always()
