@@ -7,7 +7,7 @@ public class BudgetBakerLogoutPage {
 	
 	private final By btn_profileicon = By.cssSelector("div[role='listbox']");
 	private final By btn_settings = By.xpath("//div[text()='Settings']");
-	private final By btn_privacySettings = By.cssSelector("a[href='/settings/privacy1']");
+	private final By btn_privacySettings = By.cssSelector("a[href='/settings/privacy']");
 	private final By btn_deleteUserData = By.xpath("//button[text()='Delete all user data']");
 	private final By btn_delete = By.xpath("//button[text()='Delete']");
 	private final By btn_ok = By.xpath("//button[text()='OK']");
