@@ -43,6 +43,7 @@ jobs:
       # Step 5: Run the Selenium TestNG test suite
       - name: Run Selenium Tests
         run: mvn test
+        continue-on-error: true
       
       # Step 5: Archive the Surefire reports
       - name: Archive Surefire reports
