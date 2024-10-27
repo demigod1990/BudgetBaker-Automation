@@ -14,7 +14,7 @@ on:
 
 
 jobs:
-  test:
+  budget-baker-automation-execution:
     runs-on: ubuntu-latest  # Use Ubuntu runner
 
     services:
@@ -51,8 +51,8 @@ jobs:
         continue-on-error: false
       
       # Step 5: Archive the Surefire reports
-      - name: Archive Surefire reports
+      - name: Archive Extent Reports
         uses: actions/upload-artifact@v3
         with:
-          name: surefire-reports
-          path: target/surefire-reports
+          name: extent-reports
+          path: ExtentReports/**
