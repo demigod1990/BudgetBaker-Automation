@@ -1,6 +1,6 @@
 # .github/workflows/selenium-docker.yml
 
-name: Run Selenium Tests in Docker
+name: BudgetBaker Automation Suite Pipeline Execution
 
 on: 
   push:
